@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'pry'
-require "lemonway"
+require "payoh"
 require 'webmock/rspec'
 require 'vcr'
 

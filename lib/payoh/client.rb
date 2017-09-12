@@ -1,8 +1,8 @@
-require "lemonway/core_ext/hash"
+require "payoh/core_ext/hash"
 require 'savon'
 require "rexml/document"
 
-module Lemonway
+module Payoh
   class Client
 
     class Error < StandardError; end

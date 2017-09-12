@@ -1,6 +1,6 @@
-require "lemonway/version"
-require "lemonway/client"
+require "payoh/version"
+require "payoh/client"
 
-module Lemonway
+module Payoh
 
 end

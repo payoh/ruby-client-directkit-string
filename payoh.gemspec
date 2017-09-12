@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'lemonway/version'
+require 'payoh/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "lemonway"
-  spec.version       = Lemonway::VERSION
+  spec.name          = "payoh"
+  spec.version       = Payoh::VERSION
   spec.authors       = ["Itkin"]
   spec.email         = ["nicolas.papon@gmail.com"]
-  spec.description   = "Lemon way SOAP whitelabel client built on top of savon"
-  spec.summary       = "Lemon way SOAP whitelabel client built on top of savon"
+  spec.description   = "Payoh SOAP whitelabel client built on top of savon"
+  spec.summary       = "Payoh SOAP whitelabel client built on top of savon"
   spec.homepage      = ""
   spec.license       = "MIT"
 

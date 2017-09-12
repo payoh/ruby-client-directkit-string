@@ -8,7 +8,7 @@ Ruby API client to query LemonWay API
 
 Add this line to your application's Gemfile:
 
-    gem 'lemonway'
+    gem 'payoh'
 
 And then execute:
 
@@ -16,25 +16,25 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install lemonway
+    $ gem install payoh
 
 ## Usage
 
-1. Initialization : `Lemonway::Client.new(api_params, client_config_options, &client_config_block)`  
+1. Initialization : `Payoh::Client.new(api_params, client_config_options, &client_config_block)`  
   - `api_options` (Hash) : mandatory hash where are passed the api param you want to reapeat every client query + the `:wsdl` uri  
   - `client_config_options` (Hash) : optional hash passed to savon to build its [global options](https://github.com/savonrb/savon/blob/master/lib/savon/options.rb) used by the client on every query 
   - `client_config_block` (Block) : optional block to customize the savon client, takes a [savon global options](https://github.com/savonrb/savon/blob/master/lib/savon/options.rb) instance as param    
   ```ruby
-client = Lemonway::Client.new({wsdl:  "https://ws.lemonway.fr/[...]/service.asmx?wsdl"}, {ssl_verify_mode: :none})
+client = Payoh::Client.new({wsdl:  "https://ws.payoh.fr/[...]/service.asmx?wsdl"}, {ssl_verify_mode: :none})
 #is the same as
-client = Lemonway::Client.new wsdl:  "https://ws.lemonway.fr/[...]/service.asmx?wsdl" do |opts|
+client = Payoh::Client.new wsdl:  "https://ws.payoh.fr/[...]/service.asmx?wsdl" do |opts|
   opts.ssl_verify_mode(:none)
 end  
   ```
  
 2. Query the API directly calling the method on the client instance : `client.api_method_name(params, client_config_override, &client_block_config_override)`
-  - `api_method_name` : Lemonway underscorized mehtod name (refer to the Lemonway doc or to `client.operations` to list them 
-  - `params` (Hash) : params sent to the api, keys will be camelcased to comply with the SOAP convention used by Lemonway
+  - `api_method_name` : Payoh underscorized mehtod name (refer to the Payoh doc or to `client.operations` to list them 
+  - `params` (Hash) : params sent to the api, keys will be camelcased to comply with the SOAP convention used by Payoh
   - `client_config_override` (Hash) : A hash of config transmitted to the savon client, which overrides the [savon global config](https://github.com/savonrb/savon/blob/master/lib/savon/options.rb) for the current api call only
   - `client_block_config_override` (Block) : A Block taking a [savon global options](https://github.com/savonrb/savon/blob/master/lib/savon/options.rb) instance as param, to override the client call configuration options
 
@@ -44,7 +44,7 @@ end
 
 ```ruby
 # initialize the client
-client = Lemonway::Client.new wsdl:  "https://ws.lemonway.fr/mb/ioio/dev/directkit/service.asmx?wsdl",
+client = Payoh::Client.new wsdl:  "https://ws.payoh.fr/mb/ioio/dev/directkit/service.asmx?wsdl",
                               wl_login: "test",
                               wl_pass: "test",
                               language: "fr",
@@ -73,7 +73,7 @@ resp[:id] == resp['id'] == '123'
 
 ```
 
-Please refer to the Lemonway documentation for the complete list of methods and their parameters, or query https://ws.lemonway.fr/mb/[YOUR_LEMONWAY_NAME]/dev/directkit/service.asmx if Lemonway has provided you a development account 
+Please refer to the Payoh documentation for the complete list of methods and their parameters, or query https://ws.payoh.fr/mb/[YOUR_LEMONWAY_NAME]/dev/directkit/service.asmx if Payoh has provided you a development account 
 
 
 ## Contributing

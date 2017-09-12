@@ -1,3 +1,3 @@
-module Lemonway
+module Payoh
   VERSION = "1.0.2"
 end

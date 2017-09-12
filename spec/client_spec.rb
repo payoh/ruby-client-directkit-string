@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Lemonway::Client do
+describe Payoh::Client do
   let(:opts){
     {
       :wlLogin  => "test",
@@ -13,19 +13,19 @@ describe Lemonway::Client do
     }
     # YAML.load_file('config.yml')
   }
-  subject { Lemonway::Client.new(opts) }
+  subject { Payoh::Client.new(opts) }
 
   describe :initialize do
     it "needs one hash with :wsdl key" do
-      client = Lemonway::Client.new(opts)
+      client = Payoh::Client.new(opts)
       expect(client.instance.globals[:ssl_verify_mode]).to eq nil
     end
     it "accepts an optional second hash for savon options"  do
-      client = Lemonway::Client.new(opts, ssl_verify_mode: :none)
+      client = Payoh::Client.new(opts, ssl_verify_mode: :none)
       expect(client.instance.globals[:ssl_verify_mode]).to eq :none
     end
     it "accepts an optional block for savon options"  do
-      client = Lemonway::Client.new(opts) do |savon_options|
+      client = Payoh::Client.new(opts) do |savon_options|
         savon_options.ssl_verify_mode :none
       end
       expect(client.instance.globals[:ssl_verify_mode]).to eq :none
